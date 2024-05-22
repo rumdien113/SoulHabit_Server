@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 const UserModel = require('./user.model')
 const { Schema } = mongoose
 
-const todoSchema = new Schema({
+const Habit = new Schema({
     userId: {
         type: Schema.Types.ObjectId,
         ref: UserModel.modelName
@@ -12,12 +12,23 @@ const todoSchema = new Schema({
         type: String,
         require: true
     },
-    desc: {
+    note: {
         type: String,
+    },
+    difficulty: {
+        type: String,
+        require: true
+    },
+    resetCounter: {
+        type: String,
+        require: true
+    },
+    counter: {
+        type: Number,
         require: true
     }
 })
 
-const TodoModel = db.model('todo', todoSchema)
+const habitModel = db.model('habit', Habit)
 
-module.exports = TodoModel
+module.exports = habitModel

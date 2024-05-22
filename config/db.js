@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-const connection = mongoose.createConnection('mongodb://localhost:27017/Todo')
+const connection = mongoose.createConnection('mongodb://localhost:27017/SoulHabit')
     .on('open', () => {
         console.log("Mongodb Connected") 
     })
