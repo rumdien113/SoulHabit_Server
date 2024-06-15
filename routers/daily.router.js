@@ -4,9 +4,10 @@ const DailyController = require('../controller/daily.controller')
 
 router.post('/api/daily/store', DailyController.store)
 router.get('/api/daily/getByUserId/:id', DailyController.show)
-// router.delete('/api/habit/deleteById/:id', HabitController.delete)
-// router.get('/api/habit/getById/:id', HabitController.getTaskById)
-// router.put('/api/habit/update/:id', HabitController.update)
-// router.put('/api/habit/counter/:id/:slug', HabitController.counter)
+router.delete('/api/daily/deleteById/:id', DailyController.delete)
+router.get('/api/daily/getById/:id', DailyController.getTaskById)
+router.put('/api/daily/update/:id', DailyController.update)
+router.put('/api/daily/counter/:id/:slug', DailyController.counter)
+router.put('/api/daily/state/:id/:slug', DailyController.updateState)
 
 module.exports = router

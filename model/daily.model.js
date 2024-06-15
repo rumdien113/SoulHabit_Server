@@ -25,6 +25,10 @@ const Daily = new Schema({
         type: Date,
         require: true
     },
+    // endDate: {
+    //     type: Date,
+    //     require: true
+    // },
     repeats: {
         type: String,
         require: true,
@@ -40,6 +44,12 @@ const Daily = new Schema({
         slug: ['increase', 'decrease'],
         require: true,
         default: 0
+    },
+    state: {
+        type: Boolean,
+        require: true,
+        default: false,
+        slug: ['true', 'false']
     }
 })
 
