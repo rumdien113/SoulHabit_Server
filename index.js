@@ -1,7 +1,4 @@
 const app = require('./app')
-// const db = require('./config/db')
-// const UserModel = require('./model/user.model')
-// const TodoModel = require('./model/habit.model')
 
 const port = 3000
 

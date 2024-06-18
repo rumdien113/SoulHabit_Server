@@ -44,11 +44,11 @@ class HabitController {
     async counter(req, res, next) {
         if (req.params.slug == 'increase') {
             await Habit.findOneAndUpdate({ _id: req.params.id }, { $inc: { counter: 1 }})
-                .then(habit => res.json({status: 200, success: habit, message: 'Counter increased' }))
+                .then(habit => res.json({status: 200, message: 'Counter increased' }))
                 .catch(next)
         } else if (req.params.slug == 'decrease') {
             await Habit.findOneAndUpdate({ _id: req.params.id }, { $inc: { counter: -1}})
-                .then(habit => res.json({status: 200, success: habit, message: 'Counter decreased' }))
+                .then(habit => res.json({status: 200, message: 'Counter decreased' }))
                 .catch(next)
         } else {
             res.json({status: 400, message: 'Invalid slug'})

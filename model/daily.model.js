@@ -1,6 +1,5 @@
 const db = require('../config/db')
 const mongoose = require('mongoose')
-const mongoose_delete = require('mongoose-delete')
 const slug = require('mongoose-slug-generator')
 const UserModel = require('./user.model')
 const { Schema } = mongoose
@@ -25,10 +24,10 @@ const Daily = new Schema({
         type: Date,
         require: true
     },
-    // endDate: {
-    //     type: Date,
-    //     require: true
-    // },
+    endDate: {
+        type: Date,
+        require: true
+    },
     repeats: {
         type: String,
         require: true,
@@ -54,7 +53,6 @@ const Daily = new Schema({
 })
 
 mongoose.plugin(slug)
-Daily.plugin(mongoose_delete)
 
 const dailyModel = db.model('daily', Daily)
 
