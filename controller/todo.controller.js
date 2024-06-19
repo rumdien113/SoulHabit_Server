@@ -6,8 +6,9 @@ class TodoController {
     // [POST] /api/todo/store
     async store(req, res, next) {
         const todo = new Todo(req.body)
-        await todo.save(req.body)
-            .then(todo => res.json({ status: 200, success: todo }))
+        await todo
+            .save()
+            .then(todo => res.json({ status: true, success: todo }))
             .catch(next)
     }
 
